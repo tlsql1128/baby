@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>알레르기 음식 체크 | 베베트리</title>
+    <meta name="description" content="새 음식을 한 번에 하나씩, 관찰 포인트와 주의 식품을 정리했습니다." />
+    <link rel="stylesheet" href="../../asset/css/common.css" />
+    <link rel="stylesheet" href="../../asset/css/style.css" />
+    <link rel="stylesheet" href="../../asset/css/sub.css" />
+  </head>
+  <body class="page-sub">
+    <a class="skip-link" href="#content">본문으로 건너뛰기</a>
+    <header class="site-kv site-kv--sub" role="banner">
+      <div class="site-kv__bg site-kv__bg--sub" aria-hidden="true"></div>
+      <div class="site-kv__inner site-kv__inner--sub">
+        <div class="kv-top">
+          <a class="kv-brand" href="../../index.html" title="베베트리 홈"
+            ><img class="kv-brand__img" src="../../asset/images/logo.svg" width="120" height="44" alt="베베트리" /></a>
+          <button type="button" class="kv-menu-btn" id="kvMenuBtn" aria-controls="kvNav" aria-expanded="false" aria-label="메뉴 열기">
+            <span class="kv-menu-btn__bars" aria-hidden="true"><span class="kv-menu-btn__bar"></span><span class="kv-menu-btn__bar"></span><span class="kv-menu-btn__bar"></span></span>
+          </button>
+          <nav class="kv-nav" id="kvNav" aria-label="베베트리 주요 메뉴">
+            <ul class="kv-nav__list">
+              <li class="kv-nav__item kv-nav__item--has-sub">
+                <a class="kv-nav__link" href="../beginner/newborn-guide.html">육아가이드</a>
+                <button type="button" class="kv-nav__caret" aria-label="육아가이드 하위 메뉴"></button>
+                <ul class="kv-subnav" aria-label="육아가이드 하위 메뉴">
+                  <li><a class="kv-subnav__link" href="../beginner/newborn-guide.html">신생아 가이드</a></li>
+                  <li><a class="kv-subnav__link" href="../beginner/development-check.html">발달 체크</a></li>
+                  <li><a class="kv-subnav__link" href="../beginner/sleep-guide.html">수면 가이드</a></li>
+                  <li><a class="kv-subnav__link" href="../beginner/emergency-guide.html">응급상황 대처</a></li>
+                </ul>
+              </li>
+              <li class="kv-nav__item kv-nav__item--has-sub">
+                <a class="kv-nav__link" href="../play-education/play-guide.html">놀이·교육</a>
+                <button type="button" class="kv-nav__caret" aria-label="놀이·교육 하위 메뉴"></button>
+                <ul class="kv-subnav" aria-label="놀이·교육 하위 메뉴">
+                  <li><a class="kv-subnav__link" href="../play-education/play-guide.html">놀이 가이드</a></li>
+                  <li><a class="kv-subnav__link" href="../play-education/sensory-play.html">오감놀이</a></li>
+                  <li><a class="kv-subnav__link" href="../play-education/coloring-pages.html">색칠놀이 도안</a></li>
+                </ul>
+              </li>
+              <li class="kv-nav__item kv-nav__item--has-sub">
+                <a class="kv-nav__link" href="../food/recipe-list.html">이유식·식단</a>
+                <button type="button" class="kv-nav__caret" aria-label="이유식·식단 하위 메뉴"></button>
+                <ul class="kv-subnav" aria-label="이유식·식단 하위 메뉴">
+                  <li><a class="kv-subnav__link" href="../food/recipe-list.html">이유식 레시피</a></li>
+                  <li><a class="kv-subnav__link" href="../food/baby-food-start.html">이유식 시작 가이드</a></li>
+                </ul>
+              </li>
+              <li class="kv-nav__item kv-nav__item--has-sub">
+                <a class="kv-nav__link" href="vaccination-guide.html">건강·체크</a>
+                <button type="button" class="kv-nav__caret" aria-label="건강·체크 하위 메뉴"></button>
+                <ul class="kv-subnav" aria-label="건강·체크 하위 메뉴">
+                  <li><a class="kv-subnav__link" href="allergy-checklist.html">알레르기 체크리스트</a></li>
+                  <li><a class="kv-subnav__link" href="vaccination-guide.html">예방접종 가이드</a></li>
+                  <li><a class="kv-subnav__link" href="monthly-growth-check.html">월령별 성장 체크</a></li>
+                  <li><a class="kv-subnav__link" href="../support/faq.html">자주 묻는 질문</a></li>
+                </ul>
+              </li>
+              <li class="kv-nav__item kv-nav__item--has-sub">
+                <a class="kv-nav__link" href="../tools/due-date-calculator.html">육아계산기</a>
+                <button type="button" class="kv-nav__caret" aria-label="육아계산기 하위 메뉴"></button>
+                <ul class="kv-subnav" aria-label="육아계산기 하위 메뉴">
+                  <li><a class="kv-subnav__link" href="../tools/vaccination-calculator.html">예방접종 계산기</a></li>
+                  <li><a class="kv-subnav__link" href="../tools/sleep-calculator.html">수면시간 계산기</a></li>
+                  <li><a class="kv-subnav__link" href="../tools/due-date-calculator.html">출산 예정일 계산기</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main id="content">
+      <header class="sub-hero sub-section sub-section--none">
+        <div class="container--sub sub-hero__inner">
+          <ul class="breadcrumb" aria-label="이동 경로">
+            <li><a href="../../index.html">홈</a></li>
+            <li>건강·체크</li>
+            <li>알레르기</li>
+          </ul>
+          <p class="sub-hero__eyebrow">allergy</p>
+          <h1 class="sub-hero__title">한 번에 하나, 3, 4일씩</h1>
+          <p class="sub-hero__lead">빨기·눈, 입 주변, 설사, 숨, 기운, 입술, 발진. 느껴지면 의료기관을 먼저
+            떠올리고, 음용·씹기 전에는 반드시 가정·소아과 지시에 맞춰요. 아래는 <strong>집에서
+            훑는</strong> 정리이지, 판정이 아니에요.</p>
+        </div>
+      </header>
+      <section class="sub-section sub-section--cream">
+        <div class="container--sub">
+          <h2 class="sub-section__head" style="text-align:center;font-size:1.1rem;margin-bottom:0.5rem">체크(선택, 메모)</h2>
+          <ul class="check-list" style="max-width: 34rem; margin: 0 auto 1.5rem">
+            <li><input type="checkbox" id="a1" data-rule="one" /> <label for="a1">새 식재료는 한 번에 하나,
+              소량으로 시작했어요</label></li>
+            <li><input type="checkbox" id="a2" data-rule="days" /> <label for="a2">같은 식재료는 3, 4일 정도
+              유지하며 관찰했어요</label></li>
+            <li><input type="checkbox" id="a3" data-rule="log" /> <label for="a3">날짜, 양, 반응, 수면,
+              배변을 메모하고 있어요</label></li>
+            <li><input type="checkbox" id="a4" data-rule="time" /> <label for="a4">컨디션이 괜찮은 시간대(낮,
+              낮잠 후)에만 시도했어요</label></li>
+            <li><input type="checkbox" id="a5" data-rule="risk" /> <label for="a5">두드러기, 구토, 설사,
+              기침, 숨가쁨 같은 변화가 있었고 기록해 두었어요</label></li>
+            <li><input type="checkbox" id="a6" data-rule="plan" /> <label for="a6">다음으로 시도할 식재료를
+              정했고, 이전 재료와 섞기 전에 단독으로 확인할 계획이에요</label></li>
+          </ul>
+          <div class="result-box" id="allergySummary" role="status" aria-live="polite">
+            <p class="result-box__title">요약</p>
+            <p class="result-box__text">체크를 하면 현재 단계에 맞는 안내가 여기에 표시돼요.</p>
+          </div>
+          <p class="prose" style="text-align: center; max-width: 34rem; margin: 0 auto">입·눈 주변 붓기, 심한
+            구토·설사, 숨쉬기 힘듦, 의식·기운 떨어짐, 심한 두드러기, 전신 붉은 반점이 늦게까지 이어지면
+            <strong>당일</strong> 119, 응급, 소아, 알레르기 내과·호흡기 상담을 고려하세요. 베베트리는
+            의료를 대체하지 않아요.</p>
+        </div>
+      </section>
+      <section class="sub-section">
+        <div class="container--sub">
+          <ul class="related-grid">
+            <li><a class="related-card" href="../food/baby-food-start.html">
+              <span class="related-card__cat">이유식</span>
+              <h3 class="related-card__title">시작</h3>
+            </a></li>
+            <li><a class="related-card" href="vaccination-guide.html">
+              <span class="related-card__cat">건강</span>
+              <h3 class="related-card__title">접종</h3>
+            </a></li>
+          </ul>
+        </div>
+      </section>
+      <section class="sub-section sub-section--white">
+        <div class="container--sub cta-sub">
+          <h2>다른 육아 정보도 함께 살펴보세요</h2>
+          <a class="btn-sub" href="../../index.html#section-cat-title">메인</a>
+        </div>
+      </section>
+    </main>
+    <footer class="sub-footer" role="contentinfo">
+      <div class="sub-footer__grid">
+        <div>
+          <a href="../../index.html"><img src="../../asset/images/logo.svg" width="120" height="44" alt="베베트리" /></a>
+          <p style="margin:0.7rem 0 0;font-size:0.9rem;color:#5e5854;font-weight:500">초보 부모를 위한 육아 정보, 베베트리</p>
+        </div>
+        <div>
+          <h3>빠른 링크</h3>
+          <ul class="sub-footer__list">
+            <li><a href="../beginner/newborn-guide.html">육아가이드</a></li>
+            <li><a href="../play-education/play-guide.html">놀이·교육</a></li>
+            <li><a href="../food/recipe-list.html">이유식·식단</a></li>
+            <li><a href="vaccination-guide.html">건강·체크</a></li>
+            <li><a href="../tools/due-date-calculator.html">육아계산기</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>이용 안내</h3>
+          <ul class="sub-footer__list">
+            <li><a href="../support/faq.html">자주 묻는 질문</a></li>
+            <li><a href="../../index.html#content">맨 위로</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="sub-footer__bottom">© Bebetree. All rights reserved.</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
+    <script src="../../asset/js/kv-nav.js" defer></script>
+    <script src="../../asset/js/sub-nav.js" defer></script>
+    <script src="../../asset/js/subpages.js" defer></script>
+  </body>
+</html>

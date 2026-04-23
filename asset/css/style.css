@@ -1,0 +1,526 @@
+/* 베베트리 index.html KV (GMarketSans), 웜 톤 글래스모피즘 */
+
+@font-face {
+  font-family: "GMarketSans";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff") format("woff");
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GMarketSans";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff") format("woff");
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GMarketSans";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff") format("woff");
+  font-weight: 700;
+  font-display: swap;
+}
+
+/* 절제된 팔레트(2~3): 크림베이스 · 라벤더 퍼윙클(포인트) · 딥브라운/차콜 텍스트 */
+.site-kv {
+  --font-sans: "GMarketSans", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+
+  --glass-cream: rgba(255, 252, 248, 0.42);
+  --glass-lilac: rgba(245, 240, 252, 0.38);
+  --glass-sage: rgba(240, 246, 242, 0.28);
+  /* 포인트: 탁한 라벤더-블루(원색·쨍한 블루 사용 안 함) */
+  --point-periwinkle: #8a92b0;
+  --point-periwinkle-mid: #7a829c;
+  --point-lavender-dust: #6f6578;
+  --accent-name: #6a5f72;
+
+  --text-hero: #2a2624;
+  --text-sub: #3f3a3c;
+  --text-muted: #5c5558;
+  --text-label: #6d6669;
+
+  --shadow-glass: 0 0.2rem 0.8rem rgba(45, 38, 35, 0.05), 0 0.6rem 2rem rgba(55, 45, 60, 0.06);
+  --shadow-glass-inset: inset 0 1px 0 rgba(255, 255, 255, 0.55);
+  --shadow-btn: 0 0.12rem 0.45rem rgba(55, 50, 70, 0.07);
+  --shadow-btn-hover: 0 0.2rem 0.7rem rgba(55, 50, 70, 0.1);
+
+  font-family: var(--font-sans);
+  position: relative;
+  min-height: min(100vh, 64rem);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  isolation: isolate;
+  color: var(--text-hero);
+}
+
+.site-kv__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: #e0ddd8 url("../images/kv.png") center / cover no-repeat;
+}
+
+.site-kv__inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 100%;
+  max-width: 90rem; /* 1440px @ 16px */
+  margin: 0 auto;
+  min-height: min(100vh, 64rem);
+  padding: clamp(1.15rem, 2.3vw, 1.9rem) clamp(1.2rem, 3.2vw, 2.9rem) clamp(2.5rem, 4.8vw, 3.5rem);
+}
+
+/* 상단 */
+.kv-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.kv-brand {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  filter: drop-shadow(0 0.08rem 0.2rem rgba(255, 255, 255, 0.55));
+}
+
+.kv-brand__img {
+  height: clamp(2.3rem, 5.5vw, 2.85rem);
+  width: auto;
+}
+
+.kv-menu-btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 2.9rem;
+  height: 2.9rem;
+  border: 1px solid rgba(220, 210, 230, 0.45);
+  border-radius: 1rem;
+  background: var(--glass-cream);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #3a3538;
+  box-shadow: var(--shadow-glass-inset), var(--shadow-glass);
+  transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.kv-menu-btn:hover {
+  background: rgba(255, 252, 250, 0.65);
+  border-color: rgba(200, 190, 215, 0.5);
+}
+
+.kv-menu-btn[aria-expanded="true"] {
+  background: var(--glass-lilac);
+  border-color: rgba(195, 185, 210, 0.55);
+}
+
+.kv-menu-btn__bars {
+  display: grid;
+  gap: 4px;
+  width: 1.1rem;
+  justify-items: stretch;
+}
+
+.kv-menu-btn__bar {
+  display: block;
+  height: 2px;
+  background: #3a3538;
+  border-radius: 1px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.kv-menu-btn[aria-expanded="true"] .kv-menu-btn__bar:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.kv-menu-btn[aria-expanded="true"] .kv-menu-btn__bar:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.kv-menu-btn[aria-expanded="true"] .kv-menu-btn__bar:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* 메뉴: 반투명 글래스, 딱딱한 흰 pill 제거 */
+.kv-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.45rem 0.5rem;
+}
+
+.kv-nav__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.45rem 0.5rem;
+}
+
+.kv-nav__link {
+  display: inline-block;
+  padding: 0.55rem 1.2rem;
+  font-size: 0.94rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.35;
+  color: var(--text-sub);
+  font-family: var(--font-sans);
+  border-radius: 999px;
+  border: 1px solid rgba(230, 222, 235, 0.45);
+  background: linear-gradient(165deg, var(--glass-cream) 0%, var(--glass-lilac) 100%);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-glass-inset), 0 0.1rem 0.35rem rgba(40, 35, 45, 0.04);
+  transition: background 0.2s, border-color 0.2s, color 0.2s, box-shadow 0.2s, transform 0.16s;
+}
+
+.kv-nav__link:hover {
+  background: rgba(255, 252, 250, 0.58);
+  border-color: rgba(195, 188, 210, 0.55);
+  color: var(--text-hero);
+  box-shadow: var(--shadow-glass-inset), 0 0.2rem 0.5rem rgba(50, 45, 55, 0.05);
+  transform: translateY(-0.04rem);
+}
+
+/* ===== KV 드롭다운(2단 메뉴) ===== */
+.kv-nav__item {
+  position: relative;
+}
+
+.kv-nav__item--has-sub .kv-nav__link {
+  padding-right: 2.25rem;
+}
+
+.kv-nav__caret {
+  position: absolute;
+  right: 0.55rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.55rem;
+  height: 1.55rem;
+  border-radius: 999px;
+  border: 1px solid rgba(230, 222, 235, 0.35);
+  background: rgba(255, 252, 250, 0.55);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  color: rgba(70, 62, 78, 0.85);
+  box-shadow: var(--shadow-glass-inset), 0 0.1rem 0.3rem rgba(40, 35, 45, 0.04);
+}
+
+/* 데스크탑에서도 서브메뉴 존재를 부드럽게 표시 */
+@media (min-width: 52.001rem) {
+  .kv-nav__caret {
+    display: inline-flex;
+  }
+}
+
+.kv-nav__caret::before {
+  content: "▾";
+  font-size: 0.8rem;
+  line-height: 1;
+  transform: translateY(-0.02rem);
+}
+
+.kv-subnav {
+  list-style: none;
+  margin: 0;
+  padding: 0.55rem 0.55rem;
+  position: absolute;
+  right: 0;
+  top: calc(100% + 0.45rem);
+  min-width: 14.5rem;
+  border-radius: 1.05rem;
+  border: 1px solid rgba(230, 222, 235, 0.55);
+  background: linear-gradient(165deg, rgba(255, 252, 248, 0.9) 0%, rgba(245, 240, 252, 0.88) 100%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-glass-inset), 0 0.5rem 1.6rem rgba(55, 45, 60, 0.12);
+  display: none;
+  z-index: 50;
+}
+
+.kv-subnav__link {
+  display: block;
+  padding: 0.6rem 0.75rem;
+  border-radius: 0.9rem;
+  font-size: 0.92rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--text-sub);
+  border: 1px solid transparent;
+  transition: background 0.18s, border-color 0.18s, transform 0.18s;
+}
+
+.kv-subnav__link:hover {
+  background: rgba(255, 252, 250, 0.75);
+  border-color: rgba(195, 188, 210, 0.45);
+  transform: translateY(-0.03rem);
+}
+
+/* click 기반: 열린 메뉴만 보이기 */
+.kv-nav__item--subopen > .kv-subnav {
+  display: block;
+}
+
+/* 모바일: 아코디언 형태(버튼+펼침) */
+@media (max-width: 52rem) {
+  .kv-nav__caret {
+    display: inline-flex;
+  }
+
+  .kv-subnav {
+    position: static;
+    min-width: 0;
+    width: 100%;
+    margin-top: 0.4rem;
+    padding: 0.4rem 0.4rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow-glass-inset), 0 0.3rem 0.9rem rgba(55, 45, 60, 0.08);
+  }
+
+  .kv-nav__item--subopen > .kv-subnav {
+    display: block;
+  }
+
+  .kv-nav__item--subopen > .kv-nav__caret::before {
+    content: "▴";
+  }
+}
+
+/* 중앙: 넓고 따뜻한 글래스(차갑지 않게) */
+.kv-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 0;
+  margin-top: clamp(0.6rem, 1.6vw, 1.4rem);
+  padding: 0.5rem 0 0.5rem;
+}
+
+.kv-card {
+  width: 100%;
+  max-width: 42.5rem;
+  margin: 0 auto;
+  padding: clamp(2.85rem, 5.8vw, 3.9rem) clamp(1.9rem, 4.2vw, 3rem) clamp(2.85rem, 5.5vw, 3.75rem);
+  text-align: center;
+  font-family: var(--font-sans);
+  background: linear-gradient(
+    150deg,
+    var(--glass-cream) 0%,
+    var(--glass-lilac) 55%,
+    var(--glass-sage) 100%
+  );
+  backdrop-filter: blur(18px) saturate(1.05);
+  -webkit-backdrop-filter: blur(18px) saturate(1.05);
+  border-radius: 2.1rem;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: var(--shadow-glass-inset), var(--shadow-glass);
+}
+
+/* 시각 계층: 라벨 < 타이틀 < 서브(충분히 큼) < 버튼 */
+.kv-eyebrow {
+  display: block;
+  margin: 0 0 0.95rem;
+  font-size: clamp(0.8rem, 0.85vw, 0.9rem);
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  line-height: 1.45;
+  color: var(--text-label);
+  font-family: var(--font-sans);
+  text-transform: none;
+  opacity: 0.92;
+}
+
+.kv-title {
+  margin: 0 0 1.15rem;
+  font-size: clamp(1.3rem, 2.9vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+  color: var(--text-hero);
+  font-family: var(--font-sans);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
+  text-shadow: 0 0.08rem 0.3rem rgba(255, 255, 255, 0.82);
+  max-width: 100%;
+}
+
+.kv-title .kv-title__accent {
+  color: var(--accent-name);
+  font-style: normal;
+  font-weight: 700;
+}
+
+@media (max-width: 22rem) {
+  .kv-title {
+    font-size: 1.05rem;
+  }
+}
+
+.kv-lead {
+  margin: 0 0 2.4rem;
+  font-size: clamp(1.1rem, 1.9vw, 1.3rem);
+  font-weight: 500;
+  line-height: 1.7;
+  letter-spacing: -0.02em;
+  color: var(--text-sub);
+  font-family: var(--font-sans);
+  /* 약 2줄 정도에 맞는 폭 + 2줄 영역 */
+  max-width: min(15.5em, 100%);
+  min-height: 3.45em; /* line-height(1.7) × 2줄 */
+  margin-left: auto;
+  margin-right: auto;
+  word-break: keep-all;
+  white-space: normal;
+}
+
+.kv-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9rem 1.1rem;
+}
+
+/* CTA: 소프트 퍼윙클(블루-라벤더) · 서브는 아이보리+연한 라벤더 */
+.kv-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.55rem;
+  padding: 0.5rem 1.95rem;
+  font-size: clamp(0.98rem, 0.9rem + 0.4vw, 1.1rem);
+  font-weight: 500;
+  letter-spacing: -0.016em;
+  line-height: 1.4;
+  font-family: var(--font-sans);
+  border-radius: 999px;
+  border: 1px solid transparent;
+  box-shadow: var(--shadow-btn);
+  transition: background 0.2s, border-color 0.2s, box-shadow 0.2s, color 0.2s, transform 0.16s, opacity 0.2s;
+}
+
+.kv-btn--primary {
+  color: #faf8f5;
+  font-weight: 500;
+  background: linear-gradient(165deg, #9ba3c4 0%, #8b93af 50%, #7d86a0 100%);
+  border-color: rgba(100, 105, 130, 0.22);
+  text-shadow: 0 0.04rem 0.08rem rgba(25, 24, 30, 0.08);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), var(--shadow-btn);
+}
+
+.kv-btn--primary:hover {
+  background: linear-gradient(165deg, #a0a8c4 0%, #9098b0 100%);
+  box-shadow: var(--shadow-btn-hover);
+  border-color: rgba(95, 100, 125, 0.26);
+  transform: translateY(-0.06rem);
+}
+
+.kv-btn--primary:active {
+  transform: translateY(0.04rem);
+}
+
+.kv-btn--secondary {
+  color: #403c3e;
+  font-weight: 500;
+  background: linear-gradient(180deg, rgba(255, 252, 248, 0.72) 0%, rgba(252, 248, 255, 0.55) 100%);
+  border: 1px solid rgba(215, 208, 225, 0.55);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55), 0 0.1rem 0.35rem rgba(45, 40, 55, 0.05);
+}
+
+.kv-btn--secondary:hover {
+  background: linear-gradient(180deg, rgba(255, 255, 252, 0.88) 0%, rgba(250, 246, 252, 0.7) 100%);
+  border-color: rgba(190, 182, 205, 0.55);
+  color: #2f2c2d;
+  box-shadow: var(--shadow-btn-hover);
+  transform: translateY(-0.04rem);
+}
+
+.kv-btn:active {
+  box-shadow: var(--shadow-btn);
+}
+
+.site-kv a:focus-visible,
+.site-kv button:focus-visible {
+  outline: 2px solid rgba(120, 115, 145, 0.45);
+  outline-offset: 3px;
+}
+
+/* 모바일 메뉴: 동일 웜 글래스 */
+@media (max-width: 52rem) {
+  .kv-menu-btn {
+    display: inline-flex;
+    margin-left: auto;
+  }
+
+  .kv-nav {
+    order: 3;
+    width: 100%;
+    flex: 1 0 100%;
+    justify-content: stretch;
+  }
+
+  .kv-top {
+    position: relative;
+  }
+
+  .kv-nav {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    padding-top: 0;
+    border-radius: 1.35rem;
+    background: linear-gradient(180deg, var(--glass-cream) 0%, var(--glass-lilac) 100%);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(235, 228, 240, 0.55);
+    box-shadow: var(--shadow-glass);
+    transition: max-height 0.35s ease, opacity 0.25s ease, padding 0.25s ease;
+  }
+
+  .kv-nav--open {
+    max-height: 24rem;
+    opacity: 1;
+    margin-top: 0.5rem;
+    padding: 0.5rem 0.4rem 0.6rem;
+  }
+
+  .kv-nav__list {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.4rem;
+  }
+
+  .kv-nav__link {
+    text-align: center;
+    width: 100%;
+  }
+}
+
+@media (max-width: 30rem) {
+  .kv-btn {
+    width: 100%;
+    min-height: 3.45rem;
+    font-size: clamp(0.95rem, 0.88rem + 0.4vw, 1.05rem);
+  }
+}
