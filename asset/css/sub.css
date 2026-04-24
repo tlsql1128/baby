@@ -213,7 +213,8 @@
   padding: 0;
 }
 .prose li {
-  margin-bottom: 0.45rem;
+  margin-bottom: 0.75rem; /* 10~14px 간격 */
+  line-height: 1.7;
 }
 
 /* 요약/포인트 카드 */
@@ -424,14 +425,35 @@
   box-shadow: 0 0.1rem 0.35rem rgba(45, 40, 55, 0.04);
 }
 .faq-list summary {
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
   list-style: none;
   color: var(--c-text);
   font-size: 0.96rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
 }
 .faq-list summary::-webkit-details-marker {
   display: none;
+}
+.faq-list summary::after {
+  content: "▼";
+  font-size: 0.85rem;
+  color: #7a6f86;
+  flex-shrink: 0;
+  transition: transform 0.25s ease, color 0.2s ease;
+}
+.faq-list details[open] summary::after {
+  content: "▲";
+  color: #5d4f6a;
+}
+.faq-list summary:hover {
+  color: #5d4f6a;
+}
+.faq-list details:hover {
+  background: #fffaf2;
 }
 .faq-list details[open] summary {
   margin-bottom: 0.5rem;
@@ -1983,14 +2005,35 @@ button.btn-sub {
 }
 .rbf-cat-scroller {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 0.45rem;
-  overflow-x: auto;
-  overflow-y: hidden;
+  overflow: visible;
   padding-bottom: 0.35rem;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: thin;
+}
+.rbf-cat-scroller::-webkit-scrollbar {
+  height: 0;
+}
+.rbf-cat-scroller::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+@media (max-width: 40rem) {
+  .rbf-cat-scroller {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  .rbf-cat-scroller::-webkit-scrollbar {
+    height: 4px;
+  }
+  .rbf-cat-scroller::-webkit-scrollbar-thumb {
+    background: rgba(180, 170, 200, 0.55);
+  }
 }
 .rbf-cat-scroller::-webkit-scrollbar {
   height: 4px;
@@ -2118,14 +2161,35 @@ button.btn-sub {
 }
 .ni-cat-scroller {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 0.45rem;
-  overflow-x: auto;
-  overflow-y: hidden;
+  overflow: visible;
   padding-bottom: 0.35rem;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: thin;
+}
+.ni-cat-scroller::-webkit-scrollbar {
+  height: 0;
+}
+.ni-cat-scroller::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+@media (max-width: 40rem) {
+  .ni-cat-scroller {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  .ni-cat-scroller::-webkit-scrollbar {
+    height: 4px;
+  }
+  .ni-cat-scroller::-webkit-scrollbar-thumb {
+    background: rgba(180, 170, 200, 0.55);
+  }
 }
 .ni-cat-btn {
   flex: 0 0 auto;
@@ -2239,13 +2303,34 @@ button.btn-sub {
 }
 .pba-cat-scroller {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 0.45rem;
-  overflow-x: auto;
-  overflow-y: hidden;
+  overflow: visible;
   padding-bottom: 0.35rem;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: thin;
+}
+.pba-cat-scroller::-webkit-scrollbar {
+  height: 0;
+}
+.pba-cat-scroller::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+@media (max-width: 40rem) {
+  .pba-cat-scroller {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  .pba-cat-scroller::-webkit-scrollbar {
+    height: 4px;
+  }
+  .pba-cat-scroller::-webkit-scrollbar-thumb {
+    background: rgba(180, 170, 200, 0.55);
+  }
 }
 .pba-cat-btn {
   flex: 0 0 auto;
@@ -2394,13 +2479,34 @@ button.btn-sub {
 }
 .ip-cat-scroller {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 0.45rem;
-  overflow-x: auto;
-  overflow-y: hidden;
+  overflow: visible;
   padding-bottom: 0.35rem;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: thin;
+}
+.ip-cat-scroller::-webkit-scrollbar {
+  height: 0;
+}
+.ip-cat-scroller::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+@media (max-width: 40rem) {
+  .ip-cat-scroller {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  .ip-cat-scroller::-webkit-scrollbar {
+    height: 4px;
+  }
+  .ip-cat-scroller::-webkit-scrollbar-thumb {
+    background: rgba(180, 170, 200, 0.55);
+  }
 }
 .ip-cat-btn {
   flex: 0 0 auto;

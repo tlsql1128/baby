@@ -61,7 +61,8 @@
 }
 
 .seo-prose li {
-  margin: 0.4rem 0;
+  margin: 0.7rem 0; /* 10~14px 간격 */
+  line-height: 1.7;
 }
 
 .seo-prose a {

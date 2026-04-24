@@ -539,23 +539,24 @@
 }
 
 .check-details > summary::after {
-  content: "";
-  width: 0.45rem;
-  height: 0.45rem;
-  border-right: 2px solid #8a8490;
-  border-bottom: 2px solid #8a8490;
-  transform: rotate(45deg);
+  content: "▼";
+  font-size: 0.9rem;
+  color: #7a6f86;
   flex-shrink: 0;
-  transition: transform 0.2s;
+  transition: transform 0.25s ease, color 0.2s ease;
 }
 
 .check-details[open] > summary::after {
-  transform: rotate(225deg);
-  margin-top: 0.2rem;
+  content: "▲";
+  color: #5d4f6a;
 }
 
 .check-details > summary:hover {
   background: #fdf9fb;
+}
+
+.check-details[open] > summary {
+  background: #fff7f0;
 }
 
 .check-details__hint {
