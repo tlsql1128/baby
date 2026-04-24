@@ -1,0 +1,243 @@
+/* 베베트리: 본문 SEO·가독성 보조 (브랜드 톤 유지) */
+.seo-doc {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  box-sizing: border-box;
+}
+
+.seo-prose {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.8;
+  font-size: 1rem;
+  color: #3a3538;
+  font-weight: 500;
+}
+
+.seo-prose p {
+  margin: 0 0 1rem;
+}
+
+.seo-prose p:last-child {
+  margin-bottom: 0;
+}
+
+.seo-prose h2 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #2a222c;
+  margin: 2.25rem 0 0.9rem;
+  line-height: 1.4;
+}
+
+.seo-prose h2:first-child,
+.seo-prose h3:first-child {
+  margin-top: 0;
+}
+
+.seo-prose h3 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #3d3144;
+  margin: 1.75rem 0 0.65rem;
+  line-height: 1.45;
+}
+
+.seo-prose h4 {
+  font-size: 0.98rem;
+  font-weight: 800;
+  color: #4a3f50;
+  margin: 1.35rem 0 0.5rem;
+}
+
+.seo-prose ul,
+.seo-prose ol {
+  margin: 0.5rem 0 1rem;
+  padding-left: 1.35rem;
+}
+
+.seo-prose li {
+  margin: 0.4rem 0;
+}
+
+.seo-prose a {
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  text-decoration-color: rgba(120, 110, 150, 0.45);
+}
+
+.seo-prose a:hover {
+  text-decoration-color: rgba(90, 75, 120, 0.75);
+}
+
+.seo-summary {
+  max-width: 800px;
+  margin: 0 auto 1.5rem;
+  padding: 1.1rem 1.25rem 1.2rem;
+  border-radius: var(--r, 12px);
+  background: linear-gradient(145deg, rgba(245, 240, 255, 0.9) 0%, rgba(255, 250, 245, 0.98) 100%);
+  border: 1px solid rgba(210, 200, 225, 0.65);
+  box-shadow: 0 0.2rem 0.65rem rgba(45, 40, 60, 0.06);
+}
+
+.seo-summary__head {
+  margin: 0 0 0.5rem;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #6b5a78;
+}
+
+.seo-summary__title {
+  margin: 0 0 0.55rem;
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: #2a222c;
+  line-height: 1.35;
+}
+
+.seo-summary p {
+  margin: 0;
+  line-height: 1.8;
+  font-size: 0.98rem;
+  color: #3f363d;
+  font-weight: 500;
+}
+
+.seo-toc {
+  max-width: 800px;
+  margin: 0 auto 1.5rem;
+  padding: 1rem 1.1rem 1.15rem;
+  border-radius: var(--r, 12px);
+  background: #fffef9;
+  border: 1px solid rgba(200, 192, 210, 0.7);
+  box-shadow: 0 0.12rem 0.5rem rgba(45, 40, 60, 0.05);
+}
+
+.seo-toc__title {
+  margin: 0 0 0.65rem;
+  font-size: 1.05rem;
+  font-weight: 900;
+  color: #2a222c;
+}
+
+.seo-toc ol,
+.seo-toc ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  line-height: 1.75;
+  font-weight: 600;
+  color: #4a3f50;
+  font-size: 0.95rem;
+}
+
+.seo-toc a {
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.seo-faq {
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+.seo-faq dt {
+  font-weight: 800;
+  color: #2a222c;
+  margin: 1.25rem 0 0.35rem;
+  font-size: 1rem;
+}
+
+.seo-faq dt:first-child {
+  margin-top: 0;
+}
+
+.seo-faq dd {
+  margin: 0 0 0.5rem 0.15rem;
+  color: #4a3f50;
+  font-weight: 500;
+  font-size: 0.98rem;
+}
+
+.seo-aside {
+  max-width: 800px;
+  margin: 1.25rem auto 0;
+  padding: 0.9rem 1.05rem;
+  border-left: 4px solid rgba(180, 160, 210, 0.75);
+  border-radius: 0 var(--r, 10px) var(--r, 10px) 0;
+  background: rgba(255, 254, 252, 0.95);
+  font-size: 0.95rem;
+  color: #4d4348;
+  font-weight: 500;
+}
+
+.seo-updated {
+  max-width: 800px;
+  margin: 0 auto 0.5rem;
+  font-size: 0.9rem;
+  color: #6a605c;
+  font-weight: 600;
+  text-align: right;
+}
+
+.seo-trust {
+  max-width: 800px;
+  margin: 1rem auto 0;
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  text-align: center;
+  background: rgba(255, 252, 248, 0.95);
+  border: 1px dashed rgba(200, 192, 210, 0.85);
+  font-size: 0.9rem;
+  color: #5d514c;
+  font-weight: 500;
+}
+
+.seo-list-head {
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: #2a222c;
+  margin: 0 0 0.9rem;
+  text-align: center;
+}
+
+/* 메인: 상단 SEO 안내 */
+.seo-main-lead {
+  background: linear-gradient(180deg, #fffef9 0%, #fbf6f0 100%);
+  border-bottom: 1px solid rgba(220, 210, 200, 0.45);
+}
+
+.seo-main-lead__inner {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1.75rem 1rem 1.5rem;
+}
+
+.seo-main-hero__h2 {
+  margin: 0 0 1rem;
+  font-size: 1.35rem;
+  font-weight: 900;
+  line-height: 1.4;
+  color: #2a222c;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .seo-prose,
+  .seo-summary,
+  .seo-toc,
+  .seo-faq {
+    font-size: 0.95rem;
+  }
+  .seo-prose h2 {
+    font-size: 1.12rem;
+  }
+}

@@ -1,4 +1,5 @@
 /* 베베트리 공통 기본(리셋·토큰). KV 이후 섹션 확장 시 이 파일만 보완. */
+@import url("seo-content.css");
 *,
 *::before,
 *::after {

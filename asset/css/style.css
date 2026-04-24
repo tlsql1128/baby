@@ -354,15 +354,21 @@
   margin: 0 0 1.15rem;
   font-size: clamp(1.3rem, 2.9vw, 2.2rem);
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.22;
   letter-spacing: -0.035em;
   color: var(--text-hero);
   font-family: var(--font-sans);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: clip;
+  white-space: normal;
+  overflow: visible;
   text-shadow: 0 0.08rem 0.3rem rgba(255, 255, 255, 0.82);
-  max-width: 100%;
+  max-width: min(32rem, 100%);
+  margin-left: auto;
+  margin-right: auto;
+  word-break: keep-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
 }
 
 .kv-title .kv-title__accent {
@@ -385,13 +391,16 @@
   letter-spacing: -0.02em;
   color: var(--text-sub);
   font-family: var(--font-sans);
-  /* 약 2줄 정도에 맞는 폭 + 2줄 영역 */
-  max-width: min(15.5em, 100%);
-  min-height: 3.45em; /* line-height(1.7) × 2줄 */
+  /* 서브 타이틀은 항상 2줄까지만 */
+  max-width: min(32rem, 100%);
   margin-left: auto;
   margin-right: auto;
   word-break: keep-all;
   white-space: normal;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
 }
 
 .kv-actions {

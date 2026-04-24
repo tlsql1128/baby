@@ -116,11 +116,27 @@
 }
 
 .section__desc {
-  margin: 0;
-  font-size: 1.02rem;
+  margin: 0 auto;
+  max-width: 45rem; /* ~720px */
+  text-align: center;
+  font-size: 1.01rem;
   font-weight: 500;
-  line-height: 1.6;
+  line-height: 1.7;
   color: var(--c-text-sub);
+  word-break: keep-all;
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+@media (max-width: 40rem) {
+  .section__desc {
+    max-width: 46rem;
+    font-size: 0.98rem;
+    -webkit-line-clamp: 3;
+  }
 }
 
 /* 섹션 배경 리듬 */
